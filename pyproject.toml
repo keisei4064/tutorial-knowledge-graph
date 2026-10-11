@@ -7,6 +7,7 @@ dependencies = [
     "ipywidgets>=8.1.9",
     "networkx>=3.6.1",
     "owlrl>=7.6.2",
+    "oxrdflib>=0.5.0",
     "pyoxigraph>=0.5.11",
     "pyshacl>=0.40.1",
     "rdflib>=7.6.0",

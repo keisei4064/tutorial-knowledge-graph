@@ -272,6 +272,19 @@ wheels = [
 ]
 
 [[package]]
+name = "oxrdflib"
+version = "0.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyoxigraph" },
+    { name = "rdflib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ec/97/589f244d9a12e033f5216595ef17e7975aabe7f906f709a3a8d1cde37288/oxrdflib-0.5.0.tar.gz", hash = "sha256:f83148e2c6d443f7718c6e8936c6b89e36ebb4f1002da69e8f0656e8fb5a0df2", size = 7708, upload-time = "2025-09-13T19:11:32.584Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c6/f7/9cee8d87f202f88d93179db083508c898deac42b235ff20ade1f456770a1/oxrdflib-0.5.0-py3-none-any.whl", hash = "sha256:dbe7b57bddca1b2acaf93c71ce3cf2022be8e673052e05ad317682cb9c56b559", size = 9925, upload-time = "2025-09-13T19:11:31.368Z" },
+]
+
+[[package]]
 name = "packaging"
 version = "26.3"
 source = { registry = "https://pypi.org/simple" }
@@ -558,6 +571,7 @@ dependencies = [
     { name = "ipywidgets" },
     { name = "networkx" },
     { name = "owlrl" },
+    { name = "oxrdflib" },
     { name = "pyoxigraph" },
     { name = "pyshacl" },
     { name = "rdflib" },
@@ -575,6 +589,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.9" },
     { name = "networkx", specifier = ">=3.6.1" },
     { name = "owlrl", specifier = ">=7.6.2" },
+    { name = "oxrdflib", specifier = ">=0.5.0" },
     { name = "pyoxigraph", specifier = ">=0.5.11" },
     { name = "pyshacl", specifier = ">=0.40.1" },
     { name = "rdflib", specifier = ">=7.6.0" },
