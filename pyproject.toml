@@ -3,10 +3,14 @@ name = "tutorial-knowledge-graph"
 version = "0.1.0"
 requires-python = ">=3.11,<3.12"
 dependencies = [
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+    "networkx>=3.6.1",
     "owlrl>=7.6.2",
     "pyoxigraph>=0.5.11",
     "pyshacl>=0.40.1",
     "rdflib>=7.6.0",
+    "yfiles-jupyter-graphs>=2.0.0",
 ]
 
 [dependency-groups]
