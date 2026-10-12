@@ -1,0 +1,15 @@
+{
+    "mentor.shacl.validation": {
+        "profiles": {
+            "raw-ttl-trig-sample-world-trig": {
+                "name": "raw_ttl_trig/sample_world.trig",
+                "shapes": [
+                    "http://www.w3.org/ns/shacl#"
+                ],
+                "includeFiles": [
+                    "raw_ttl_trig/sample_world.trig"
+                ]
+            }
+        }
+    }
+}

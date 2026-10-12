@@ -1,0 +1,45 @@
+@prefix ex:   <https://example.org/household#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# An RDF Dataset with one default graph and three named graphs.
+
+# Default graph: shared vocabulary and entities
+{
+    ex:Robot  a rdfs:Class .
+    ex:Wallet a rdfs:Class .
+    ex:Table  a rdfs:Class .
+    ex:Room   a rdfs:Class .
+
+    ex:inRoom a rdf:Property ; rdfs:range ex:Room .
+    ex:sees a rdf:Property ; rdfs:domain ex:Robot .
+    ex:on a rdf:Property ; rdfs:domain ex:Wallet ; rdfs:range ex:Table .
+    ex:nearRobot a rdf:Property ; rdfs:domain ex:Table ; rdfs:range ex:Robot .
+
+    ex:robot1     a ex:Robot .
+    ex:wallet1    a ex:Wallet .
+    ex:table1     a ex:Table .
+    ex:livingRoom a ex:Room .
+}
+
+# Named graph: directly observed facts
+ex:observation {
+    ex:robot1 ex:inRoom ex:livingRoom ;
+              ex:sees   ex:table1 .
+    ex:table1 ex:inRoom ex:livingRoom .
+}
+
+# Named graph: an illustrative result of a CUSTOM inference rule
+# (RDF/TriG alone does not compute this inference)
+ex:inference {
+    ex:table1 ex:nearRobot ex:robot1 .
+}
+
+# Named graph: a hypothesis, NOT a confirmed observation
+ex:assumption {
+    ex:wallet1 ex:on ex:table1 .
+}
+
+# The location of ex:wallet1 is not known from observation.
+# Named graphs keep different information sources/layers separate.
+# Their priority and conflict-handling are left to an application runtime.

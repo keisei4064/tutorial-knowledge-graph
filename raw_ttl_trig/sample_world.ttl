@@ -1,0 +1,42 @@
+@prefix ex:   <https://example.org/household#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# A single RDF graph: a tiny household scene graph.
+# Only observed/established information is included here.
+
+# Classes
+ex:Robot  a rdfs:Class .
+ex:Wallet a rdfs:Class .
+ex:Table  a rdfs:Class .
+ex:Room   a rdfs:Class .
+
+# Properties
+ex:inRoom a rdf:Property ;
+    rdfs:range ex:Room .
+
+ex:sees a rdf:Property ;
+    rdfs:domain ex:Robot .
+
+ex:on a rdf:Property ;
+    rdfs:domain ex:Wallet ;
+    rdfs:range ex:Table .
+
+ex:nearRobot a rdf:Property ;
+    rdfs:domain ex:Table ;
+    rdfs:range ex:Robot .
+
+# Individuals
+ex:robot1      a ex:Robot .
+ex:wallet1     a ex:Wallet .
+ex:table1      a ex:Table .
+ex:livingRoom  a ex:Room .
+
+# Observed facts
+ex:robot1 ex:inRoom ex:livingRoom ;
+          ex:sees   ex:table1 .
+ex:table1 ex:inRoom ex:livingRoom .
+
+# No location is stated for ex:wallet1.
+# Under the open-world assumption, this does NOT mean the wallet
+# is absent from the table (or any other location).
